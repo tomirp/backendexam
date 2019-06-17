@@ -59,5 +59,4 @@ router.delete('/karyawan/delete', (req, res) => {
     })
 })
 
-
 module.exports = router
