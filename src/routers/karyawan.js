@@ -41,7 +41,7 @@ router.patch('/karyawan/:Id', (req, res) => {
     const data = [req.body, req.params.Id]
 
     conn.query(sql, data, (err, result) => {
-        if (err) return res.send(err.mess)
+        if (err) return res.send(err.sqlMessage)
 
         res.send(result)
     })
@@ -53,7 +53,7 @@ router.delete('/karyawan/delete', (req, res) => {
     const data = req.body.id
 
     conn.query(sql, data, (err, result) => {
-        if(err) return res.send(err)
+        if(err) return res.send(err.sqlMessage)
 
         res.send(result)
     })
